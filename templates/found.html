@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Readers for Readers: Books
+{% endblock %}
+
+{% block heading %}
+	Readers for Readers<br>
+    Search Results...
+{% endblock %}
+
+{% block images %}
+    			  <img src="{{ url_for('static',filename='images/img1.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img2.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img3.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img4.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img5.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img6.jpg') }}">
+{% endblock %}
+
+{% block center %}
+    <p class="center">
+		<h3 style="font-family: times; color: #4d194d;"><b><u>Books Found: {% if books!='empty' %}{{books|length}}{% endif %}</u></b></h3>
+		<ul style="font-family: times; color: #4d194d; text-align: left;">
+				{% if books=='empty' %}
+					<li><h4 style="font-family: times; color: #4d194d;"><b><u>No Books Found </u></b></h4></li>
+				{% else %}
+					{% for item in books %}
+					<li>
+                		<b>Book ISBN: </b><a href="{{ url_for('book', isbn=item[1], username=username) }}">{{item[1]}}</a><br>
+                		<b>Book Name: </b>{{item[2]}}<br>
+                		<b>Author: </b>{{item[3]}}<br>
+                		<b>Year Published: </b>{{item[4]}}<br>
+                		<br>
+                	</li>
+                	{% endfor %}
+            	{% endif %}		
+		</ul>
+	 	
+	</p>
+{% endblock %}

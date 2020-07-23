@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Readers for Readers
+{% endblock %}
+
+{% block heading %}
+    Readers for Readers
+{% endblock %}
+
+{% block images %}
+    			  <img src="{{ url_for('static',filename='images/img1.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img2.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img3.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img4.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img5.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img6.jpg') }}">
+{% endblock %}
+
+{% block center %}
+    <p class="center">
+		<h3 style="font-family: times; color: #4d194d;"><b><u>Things that Every Bookworm has said...</u></b></h3>
+	 	<ul>
+			<li style="text-align: left; font-family: times; color: #804000;"><b>I’ll stop just as soon as I get to the end of this … chapter.</b><br>Yeah, right. You and I both know that unless you accidentally fall asleep mid-page, you will keep reading for five more chapters. Or the end of the book. Whichever comes first. Who needs to sleep, work, cook … anyway?</li>
+			<li style="text-align: left; font-family: times; color: #804000;"><b>I can’t come to your party. I’m busy. (Busy reading.)</b><br>Because parties. And talking. Us bookworms would rather be reading than standing around making small talk.</li>
+			<li style="text-align: left; font-family: times; color: #804000;"><b>I’m showing my kids the importance of reading.</b><br>Who needs to clean the house or cook dinner when we’re trying to emphasize the importance of reading to our kids? I’m just doing my part as a reading role model, showing my kids how reading is a part of one’s everyday life. Now back to my book…</li>
+			<li style="text-align: left; font-family: times; color: #804000;"><b>WHAT?! Are you kidding me right now?</b><br>When your book abruptly ends in the lamest, most non-wrapped-up way possible. You’re just mad. You read the whole book and then, this is how it ends? There may be other words said that aren’t appropriate for this article.</li>
+		</ul>
+		<br>
+		<br>
+		<span style="text-align: left; font-family: times; color: #4d194d;"><b>Looking for a new Book? or maybe want to review some of your favourite reads? Sign Up for a Free Account of Readers For Readers and get you opinions heard by millions of fellow Bookworms...</b></span>
+	</p>
+{% endblock %}
+
+{% block right %}
+<div class="right">
+	
+	<form action="{{ url_for('login') }}" method="post">
+		<div class="container"> 
+            <label><b>Username</b></label> 
+            <input type="text" placeholder="Enter Username" name="username" required> 
+  
+            <label><b>Password</b></label> 
+            <input type="password" placeholder="Enter Password" name="password" required> 
+  			<br>
+  			<p></p>
+            <button type="submit">Login</button> 
+        </div> 
+	</form>
+	<br>
+	<br>
+	<h6 style="font-family: times; color: #4d194d;">Do not have an Account? Sign Up now for a Free Account</h6>
+	<br>
+	<a href="{{ url_for('signup') }}" style="border-style: solid; border-color: brown; color: brown; padding: 1%;">Sign Up</a>
+	<br>
+	<br>   
+</div>  		
+{% endblock %}

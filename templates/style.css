@@ -1,0 +1,57 @@
+h1 {
+	margin: 0.5%;
+	text-shadow: 2px 2px #ff9999;
+	font-family: times;  
+	padding: 2%;      
+    color: brown;
+    background-color: beige;
+    font-weight: 40 px;
+    border-style: solid;
+    border-color: brown;
+}
+
+body {
+	background-color: beige;
+}
+
+#main {
+	margin: 0.5%;
+	padding: 2%;
+	border-style: solid;
+    border-color: brown;
+    height: 100%;
+}
+
+img {
+	width: 100%;
+	margin-bottom: 8%;
+}
+
+.col-8{
+
+	border-collapse: collapse;
+	border-style: solid;
+    border-color: brown;
+    border-width: 1.5px;
+    text-align: center;
+    height: 100%;
+}
+
+.row, .col-2 {
+    height: 100%;
+}
+
+.center {
+
+	padding: 5%;
+}
+
+.right {
+	border-style: solid;
+    border-color: brown;
+    border-width: 1.5px;
+    width: 175%;
+    text-align: center;
+    font-family: times;  
+    color: brown;
+}

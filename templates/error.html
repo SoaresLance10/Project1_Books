@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Readers for Readers: Error
+{% endblock %}
+
+{% block heading %}
+    Readers for Readers
+{% endblock %}
+
+{% block center %}
+		<h2 style="font-family: times; color: #4d194d;"><b><u>Error</u></b></h2>
+		<br>
+		<br>
+		<h3 style="font-family: times; color: #4d194d;">{{message}}</h3>
+		<br>
+		<a href="{{ url_for('index') }}" style="border-style: solid; border-color: brown; color: brown; padding: 1%;">Back to Home</a>
+		<p>
+			<br>
+		</p>
+{% endblock %}

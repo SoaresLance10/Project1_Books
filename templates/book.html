@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Readers for Readers: Review
+{% endblock %}
+
+{% block heading %}
+    Readers for Readers<br>
+    {{book_name}}
+{% endblock %}
+
+{% block images %}
+    			  <img src="{{ url_for('static',filename='images/img1.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img2.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img3.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img4.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img5.jpg') }}">
+			      <img src="{{ url_for('static',filename='images/img6.jpg') }}">
+{% endblock %}
+
+{% block center %}
+    <p class="center">
+    	<h3 style="font-family: times; color: #4d194d; text-align: left;"><b><u>Book Information: </u></b></h3>
+		<ul style="font-family: times; color: #4d194d; text-align: left;">
+				<li><b>Book ISBN: </b> {{isbn}}</li>
+				<li><b>Book Title: </b> {{title}}</li>
+				<li><b>Author: </b> {{author}}</li>
+				<li>
+					<b>Year Published: </b>{{year}}<br><br>
+					<h5 style="font-family: times; color: #4d194d; text-align: left;"><b>GoodReads Data: </b></h5><br>
+				</li>
+				<li><b>Total Number of Ratings: </b>{{ratings_count}}</li>
+				<li><b>Total Number of Text Reviews:  </b>{{text_reviews_count}}</li>
+				<li><b>Average Rating: </b>{{avg_rating}}</li>
+		</ul>
+	</p>
+
+	<p class="center">
+    	<h3 style="font-family: times; color: #4d194d; text-align: left;"><b><u>Your Review:  </u></b></h3>
+		<ul style="font-family: times; color: #4d194d; text-align: left;">
+			{% if reviews=='empty' %}
+				<li>
+					<b>You have not Reviewed this Book yet... </b><br>
+					<h5 style="font-family: times; color: #4d194d; text-align: left;"><b><u>Add Your Review: </u></b></h5>
+					<form action="{{ url_for('review', username=username, isbn=isbn) }}" method="post" style="border-style: solid; border-width: 1.5px; border-color: brown; text-align: left; font-family: times; color: brown;">
+						<div class="container"> 
+							<br>
+            				<label><b>Your Review</b></label><br>
+            				<textarea name="treview" rows="10" cols="60" placeholder="Your Review: "></textarea><br><br> 
+				  			<label><b>Rating (1-5):</b></label>
+				            <input type="number" placeholder="Rating: " name="rating"><br><br> 
+				  			<p></p>
+				            <button type="submit">Submit</button> 
+				            <br>
+				            <br>
+				        </div> 
+					</form>
+				</li>
+			{% else %}
+				{% for review in reviews %}
+				<li>
+                	<b>Your Review: </b>{{review[2]}}<br>
+                	<b>Your Rating: </b>{{review[3]}}<br>
+                	<br>
+                </li>
+               	{% endfor %}
+            {% endif %}		
+		</ul>
+	</p>
+{% endblock %}
+
+{% block right %}
+	
+{% endblock %}
